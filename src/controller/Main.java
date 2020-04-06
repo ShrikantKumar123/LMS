@@ -97,35 +97,35 @@ public class Main{
 
 				switch(input){
 				case 1:
-					addUserIO((Admin)user,Constants.ADMIN);		//transfers control to add user IO.
+					addUserIO((Admin)user,Constants.ADMIN);		
 					System.out.println(template);
 					break;
 				case 2:
-					addUserIO((Admin)user,Constants.FACULTY);	//transfers control to add user IO.
+					addUserIO((Admin)user,Constants.FACULTY);	
 					System.out.println(template);
 					break;
 				case 3:
-					addUserIO((Admin)user,Constants.STUDENT);	//transfers control to add user IO.
+					addUserIO((Admin)user,Constants.STUDENT);	
 					System.out.println(template);
 					break;
 				case 4:
-					addResourceIO((Admin)user,Constants.BOOK);	//transfers control to add resource Interface
+					addResourceIO((Admin)user,Constants.BOOK);	
 					System.out.println(template);
 					break;
 				case 5:
-					addResourceIO((Admin)user,Constants.COURSE_PACK);	//transfers control to add resource Interface
+					addResourceIO((Admin)user,Constants.COURSE_PACK);	
 					System.out.println(template);
 					break;
 				case 6:
-					addResourceIO((Admin)user,Constants.MAGAZINE);	//transfers control to add resource Interface
+					addResourceIO((Admin)user,Constants.MAGAZINE);
 					System.out.println(template);
 					break;
 				case 7:
-					removeUserIO((Admin)user);		// transfers control to remove user Interface
+					removeUserIO((Admin)user);		
 					System.out.println(template);
 					break;
 				case 8:
-					removeResourceIO((Admin)user);	// transfers control to remove resource Interface
+					removeResourceIO((Admin)user);	
 					System.out.println(template);
 					break;
 				case 9:
@@ -163,7 +163,7 @@ public class Main{
 
 				if(!sc.hasNextInt()){
 					System.out.println("Give the correct input");
-					userInput = sc.nextLine();		//to ignore the wrong input
+					userInput = sc.nextLine();	
 					continue;
 				}
 				input = sc.nextInt();
@@ -172,35 +172,35 @@ public class Main{
 				switch(input){
 
 				case 1:
-					borrowIO((Borrower)user,type);		// transfers control to borrow Interface
+					borrowIO((Borrower)user,type);		
 					System.out.println(template_2);
 					break;
 				case 2:
-					returnResourceIO((Borrower)user);		// transfers control to return resource Interface
+					returnResourceIO((Borrower)user);		
 					System.out.println(template_2);
 					break;
 				case 3:
-					deleteRequestIO((Borrower)user);		// transfers control to delete request Interface
+					deleteRequestIO((Borrower)user);		
 					System.out.println(template_2);
 					break;
 				case 4:
-					((Borrower)user).viewIssued();			// views issued Resources by calling viewIssued function
+					((Borrower)user).viewIssued();			
 					System.out.println(template_2);
 					break;
 				case 5:
-					((Borrower)user).viewRequests();		// views requests of user
+					((Borrower)user).viewRequests();		
 					System.out.println(template_2);
 					break;
 				case 6:
-					((Borrower)user).viewFines();				// views fines to the user
+					((Borrower)user).viewFines();				
 					System.out.println(template_2);
 					break;
 				case 8:
-					renewResourceIO((Borrower)user);		// transfers control to renew Resource IO Interface
+					renewResourceIO((Borrower)user);		
 					System.out.println(template_2);
 					break;
 				case 7:
-					System.out.println("Do you really want to log out? y/n");		//asks user if it wants to log out
+					System.out.println("Do you really want to log out? y/n");		
 					userInput = sc.nextLine();
 					if((userInput.equals("y") || userInput.equals("Y"))){
 						System.out.println("Thanks... logging out!");
@@ -380,7 +380,7 @@ public class Main{
 
 	}
 	
-	// IO for Request Deletion
+
 	
 	void deleteRequestIO(Borrower borrower){
 
