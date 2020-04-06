@@ -3,7 +3,7 @@ package businesslogic;
 
 import java.util.*;
 
-//import com.sun.org.apache.xalan.internal.templates.Constants;
+
 import model.Constants;
 import dao.Admin;
 import model.LibraryInfo;
@@ -22,13 +22,12 @@ public class Library implements LibraryInfo {
 
 	static Library lib;
 
-	// The IDs for resources ... They are kept unique and accessed using Library class
+	
 	public static int nextResID = 1001;
 	public static int nextUserID = 14100180;
 	//next fine ID... check  void updateFines() function
 	public static int nextFineID = 0;		
-	//  keeps record of fines which are to be checked by the library
-	//	They are related to those resources only which are ISSUED to users...
+	
 	Set<Fine> toBeFined;	
 
 
@@ -118,7 +117,7 @@ public class Library implements LibraryInfo {
 			else
 				magazines++;
 		}
-		//output all the stats.
+		
 		System.out.println("\t\t\t\t*** Library System Stats ***\n\nNo. of Users:\t" + users.size());
 		System.out.println("\tAdministrators: " + admin + "\n\tFaculty: " + faculty + "\n\tStudents: " + students);
 
@@ -157,9 +156,7 @@ public class Library implements LibraryInfo {
 
 	public boolean removeUser(int userID){
 
-		/* This part checks whether a user has some resources or not...
-		   It removes all the resources from the library under the assumption that
-		   the user had taken all the resources with him. */
+		
 		LibraryUser user = findUser(userID);
 		if(user.type != Constants.ADMIN){
 			Borrower borrower = (Borrower)user;
@@ -235,12 +232,7 @@ public class Library implements LibraryInfo {
 
 	public void updateFines(){
 
-		/*Updates Fines by checking the list kept by Library (Set<Fine> toBeFined).
-		  This collection contains the fines of the resources which are issued to some users.
-		  This function checks if the dueDate has passed or not and accordingly makes fines to users.
-		  IF A FINE IS IN THIS COLLECTION IS DOESN'T MEAN THAT THEY WILL BE FINED OBVIOUSLY. but 
-		  only those users are fined who have resource(s) with due date passed...*/
-
+		
 
 		Date today = Library.calendar.getTime();
 		int amount = 0,days = 0;
