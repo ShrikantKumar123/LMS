@@ -44,9 +44,7 @@ public class Borrower extends LibraryUser{
 
 	
 
-	/*
-	 will print all the pending requests this user has made, the requests can be for multiple resources
-	 */
+	
 	public void viewRequests(){
 
 		if(requestedResources.size() == 0){
@@ -62,7 +60,6 @@ public class Borrower extends LibraryUser{
 		}
 	}
 	
-	 //should print on the screen the names and ID's of all the resources that this user has issued
 	 
 	
 	public void viewIssued(){
@@ -79,8 +76,7 @@ public class Borrower extends LibraryUser{
 			System.out.println("\n"+(i+1)+".\t"+res.resourceID+" --- "+res.resourceName+" --- "+dateFormat.format(res.issueDate)+" --- "+res.getReturnDate());
 		}
 	}
-	// view the issue dates for all the resources the current user has issued
-	 
+	
 	void viewIssueDates(){
 		if(issuedResources.size() == 0){
 			System.out.println("There are no resources issued!\n");
@@ -96,8 +92,6 @@ public class Borrower extends LibraryUser{
 		}
 	}
 	
-	 //view the due dates for all the resources the current user has issued
-	 //the due date must be 15 days after the issue date for the student and 30 days for the faculty
 	 
 	void viewDueDates(){
 		if(issuedResources.size() == 0){
@@ -141,14 +135,7 @@ public class Borrower extends LibraryUser{
 	}
 
 	
-	/*
-	 will try to issue a resource with given resource id to the current user.
-	 shouldnt make a request if the same person has issued the book
-	 for checking availability, this function should call the checkAvailability() method in the Borrowable interface
-	 for actually issueing the resource, this function will call the issueResource() method in the Borrowable interface
-	 param resourceID give in the resource id of the Book/ReadingPack which needs to be issued
-	 return if the resource is available, issue it to the user and return true, else make a request and return false
-	 */
+	
 	public boolean tryIssue(ArrayList<LibraryResource> res){
 		Library lib = Library.getInstance("LUMS Library");
 
@@ -210,13 +197,7 @@ public class Borrower extends LibraryUser{
 		return false;
 	}
 
-	/*
-	 param resourceID give in the resource id of the Book/ReadingPack which needs to be returned
-	 return will try to return the resource with given ID, if successful, return 1, else return false
-	 again, for checking if the resource is issued to this particular user, you will call the checkIssuer() method of borrowable interface
-	 for returning the resource, you must call the returnResource() method of the Borrowable interface
-	 also, while returning, check the fines if the item is returned after the due date
-	 */
+	
 	public boolean tryReturn(int resourceID){
 
 		Library lib = Library.getInstance("LUMS Library");
